@@ -172,7 +172,6 @@ header .logo__nav img {
     display: inline-block;
     width: 40px;
     height: 40px;
-    font-size: 22px;
     text-align: center;
     line-height: 42px;
     border-radius: 2px;
@@ -190,6 +189,7 @@ header .logo__nav img {
 }
 .header__container .nav_soc .soc a i {
     color: var(--blue);
+    font-size: 22px;
 }
 .header__container .nav_soc .nav_main ul li,
 .header__container .nav_soc .nav_main ul li a.up_nav {
