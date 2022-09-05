@@ -124,6 +124,8 @@ header .logo__nav img {
 }
 .header__container .nav_soc {
     display: flex;
+    justify-content: end;
+    align-items: center;
 }
 .header__container .nav_main ul {
     display: flex;
@@ -133,4 +135,44 @@ header .logo__nav img {
 }
 .header__container .nav_soc .nav_main {
     margin-left: 300px;
+}
+.header__container .nav_soc .soc {
+    display: flex;
+    padding: 10px 0;
+    margin-left: 60px;
+}
+.header__container .nav_soc .soc a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 42px;
+    border-radius: 2px;
+    transition: all 100ms ease-out;
+    padding-left: 1px;
+    margin-right: 8px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.header__container .nav_soc .soc a:last-of-type {
+    margin-right: 0;
+}
+.header__container .nav_soc .soc a i {
+    color: var(--blue);
+}
+.header__container .nav_soc .nav_main ul li a {
+    padding: 18px 20px;
+    position: relative;
+}
+.header__container .nav_soc .nav_main ul li a::before:not(:last-of-type) {
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
 }
