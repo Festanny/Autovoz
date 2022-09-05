@@ -1,3 +1,7 @@
 $(document).ready(function(){
-    $('.single-item').slick();
+    $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+      });
 });
