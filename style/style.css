@@ -19,6 +19,18 @@
     color: var(--color);
 }
 
+a {
+    text-decoration: none;
+    display: block;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
 @media (min-width: 768px) {
     .container {
         width: 750px;
@@ -58,9 +70,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
     letter-spacing: -.05em;
 }
-
+header {
+    padding-top: 23px;
+}
 .header__container {
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
     position: relative;
 }
 header .icon-box__subtitle {
@@ -80,7 +94,6 @@ header .logo__nav {
 }
 header .nav .contact {
     display: flex;
-    padding: 23px 0;
 }
 header .nav .contact .icon-box {
     margin-right: 30px;
@@ -91,10 +104,9 @@ header .nav .contact .icon-box:last-of-type {
     border: 0;
 }
 header .logo__nav .logo {
-    background-color: var(--white);
-}
-header .logo__nav .logo {
     width: 270px;
+    background-color: var(--white);
+    margin-right: 30px;
 }
 header .logo__nav img {
     width: 100%;
@@ -103,4 +115,22 @@ header .logo__nav img {
 .header__container::before {
     content: '';
     background-color: var(--white);
+}
+.header__container nav {
+    background-color: var(--blue);
+}
+.header__container nav .nav_soc {
+    color: var(--white)
+}
+.header__container .nav_soc {
+    display: flex;
+}
+.header__container .nav_main ul {
+    display: flex;
+}
+.header__container .nav_main ul li a {
+    color: var(--white);
+}
+.header__container .nav_soc .nav_main {
+    margin-left: 300px;
 }
