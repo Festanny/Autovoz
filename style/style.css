@@ -191,7 +191,8 @@ header .logo__nav img {
 .header__container .nav_soc .soc a i {
     color: var(--blue);
 }
-.header__container .nav_soc .nav_main ul li {
+.header__container .nav_soc .nav_main ul li,
+.header__container .nav_soc .nav_main ul li a.up_nav {
     position: relative;
 }
 .header__container .nav_soc .nav_main ul li a {
@@ -265,4 +266,14 @@ header .logo__nav img {
 }
 .header__container .nav_soc .nav_main ul li.main-li a:hover {
     color: var(--blue)
+}
+.header__container .nav_soc .nav_main ul li a.up_nav:hover::after,
+.header__container .nav_soc .nav_main ul li a.up_nav.active::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 5px;
+    left: 15px;
+    bottom: 0;
+    background-color: var(--red);
 }
