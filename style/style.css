@@ -8,6 +8,8 @@
     --color4: #4ab9cf;
     --color5: #f5f5f5;
     --color6: #eeeeee;
+    --color7: #9eb7cb;
+    --color8: #162e41;
     --red: #e21f2f;
     --blue: #1f425d;
     --white: #ffffff;
@@ -96,6 +98,9 @@ header .icon-box__subtitle {
     font-weight: 700;
     font-size: 14px;
 }
+header .icon-box__subtitle a {
+    color: #444;
+}
 header .fa-3x {
     font-size: 14px;
     color: var(--red);
@@ -117,7 +122,7 @@ header .nav .contact .icon-box:last-of-type {
     border: 0;
 }
 header .logo__nav .logo {
-    width: 217px;
+    width: 170px;
     background-color: var(--white);
     margin-right: 30px;
 }
@@ -176,12 +181,14 @@ header .logo__nav img {
     margin-left: 300px;
     position: relative;
 }
-.header__container .nav_soc .soc {
+.header__container .nav_soc .soc,
+footer .soc {
     display: flex;
     padding: 10px 0;
     margin-left: 50px;
 }
-.header__container .nav_soc .soc a {
+.header__container .nav_soc .soc a,
+footer .soc a {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -194,13 +201,16 @@ header .logo__nav img {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.5);
 }
-.header__container .nav_soc .soc a:hover {
+.header__container .nav_soc .soc a:hover,
+footer .soc a:hover {
     background-color: rgba(255, 255, 255, 1);
 }
-.header__container .nav_soc .soc a:last-of-type {
+.header__container .nav_soc .soc a:last-of-type,
+footer .soc a:last-of-type {
     margin-right: 0;
 }
-.header__container .nav_soc .soc a i {
+.header__container .nav_soc .soc a i,
+footer .soc a i {
     color: var(--blue);
     font-size: 22px;
 }
@@ -765,4 +775,123 @@ section.news .info-block .block .link-news {
     box-shadow: 0 6px 9px rgb(0 0 0 / 10%);
     border-bottom: 2px solid #4ab9cf;
     opacity: 1;
+}
+.counter {
+    background-image: url('../img/counter_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    margin-bottom: 0;
+}
+.counter .info-block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.counter .info-block .block {
+    background-color: var(--white);
+    border-right: 1px dashed rgba(68, 68, 68, 0.3);
+    padding: 8px 0 17px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.counter .info-block .block .number-counter {
+    display: flex;
+    align-items: center;
+}
+.counter .info-block .block .number-counter i {
+    font-size: 36px;
+    color: var(--red);
+    margin-right: 10px;
+}
+.counter .info-block .block .number-counter span {
+    font-size: 44px;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+}
+.counter .info-block .block .desc {
+    font-size: 14px;
+    color: var(--color2);
+    margin-top: -12px;
+}
+footer {
+    background-color: var(--blue);
+}
+footer .footer_1 {
+    padding: 55px 0 25px;
+    position: relative;
+}
+footer .footer_1::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -20px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent var(--blue) transparent transparent;
+    border-image: initial;
+}
+footer .footer_1 .info-block {
+    display: flex;
+}
+footer .footer_1 img.logo {
+    height: 50px;
+    margin-bottom: 20px;
+}
+footer .footer_1 p {
+    color: var(--color7);
+    margin-bottom: 11px;
+    font-size: 14px;
+}
+footer .soc {
+    margin-left: 0;
+}
+footer .footer_1 .info-block .block {
+    min-width: 20%;
+    max-width: 30%;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+footer .footer_1 .info-block .block h6 {
+    font-size: 21px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 21px;
+}
+footer .footer_1 .info-block .block ul li {
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+footer .footer_1 .info-block .block ul li a,
+footer .footer_1 .info-block .block ul {
+    color: var(--color7);
+    font-size: 14px;
+}
+footer .footer_1 .info-block .block ul li > ul {
+    margin-left: 10px;
+}
+footer .footer_2 {
+    background-color: var(--color8);
+    padding: 19px 0;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+footer .footer_2 span {
+    color: var(--color7);
+    font-size: 14px;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    opacity: .7;
+}
+footer .footer_2::before {
+    content: '';
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 32px;
+    top: 0;
+    transform-origin: top left;
+    transform: rotate(135deg);
+    background-color: var(--blue);
 }
