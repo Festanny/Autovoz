@@ -361,18 +361,21 @@ header .logo__nav img {
     color: var(--color2);
     margin-bottom: 11px;
 }
-.jumbotron-overlap .info-block .block a {
+.jumbotron-overlap .info-block .block a,
+.read-more {
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     color: var(--color4);
     font-size: 14px;
     font-weight: 700;
     display: flex;
 }
-.jumbotron-overlap .info-block .block path {
+.jumbotron-overlap .info-block .block path,
+.news .other-news path {
     stroke: none!important;
     fill: var(--color4);
 }
-.jumbotron-overlap .info-block .block svg {
+.jumbotron-overlap .info-block .block svg,
+.news .other-news svg {
     width: 12px;
     margin-left: 5px;
 }
