@@ -4,6 +4,8 @@
     --bg: #ffffff;
     --color: #545454;
     --color2: #aaaaaa;
+    --color3: #444444;
+    --color4: #4ab9cf;
     --red: #e21f2f;
     --blue: #1f425d;
     --white: #ffffff;
@@ -34,6 +36,9 @@ ul {
 }
 li {
     list-style: none;
+}
+span {
+    display: block;
 }
 
 @media (min-width: 768px) {
@@ -292,18 +297,107 @@ header .logo__nav img {
     width: 100%;
     height: 100%;
     position: relative;
+    align-items: center;
 }
 .first-slider .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translateY(-50%);
+    transform: translateY(-200px);
+}
+.first-slider .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+.first-slider .slide .slide_text {
+    margin-top: 100px;
+    position: absolute;
+    z-index: 10;
+    width: 40%;
+    color: var(--white);
 }
 .first-slider .slide h1 {
     text-transform: uppercase;
-    position: absolute;
-    z-index: 10;
-    color: var(--white);
     font-size: 44px;
-    width: 40%;
+    color: var(--white);
+}
+.first-slider .slide span {
+    margin-top: 20px;
+    display: block;
+}
+.jumbotron-overlap {
+    margin-top: -75px;
+    position: relative;
+    z-index: 50;
+}
+.jumbotron-overlap .info-block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px
+}
+.jumbotron-overlap .info-block .block:first-of-type {
+    padding: 30px;
+}
+.jumbotron-overlap .info-block .block h3 {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -.05em;
+    line-height: 1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.jumbotron-overlap .info-block .block p {
+    font-size: 14px;
+    color: var(--color2);
+    margin-bottom: 11px;
+}
+.jumbotron-overlap .info-block .block a {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    color: var(--color4);
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+}
+.jumbotron-overlap .info-block .block path {
+    stroke: none!important;
+    fill: var(--color4);
+}
+.jumbotron-overlap .info-block .block svg {
+    width: 12px;
+    margin-left: 5px;
+}
+.jumbotron-overlap .info-block .block:first-of-type {
+    box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+    background-color: var(--white);
+}
+.jumbotron-overlap .info-block .block:not(:first-of-type) p {
+    -webkit-line-clamp: 7;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 11px;
+}
+.jumbotron-overlap .info-block .block h5 a {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -.05em;
+    line-height: 1;
+    margin: 24px 0 20px;
+    text-transform: uppercase;
+    color: var(--color3);
+    display: inline-block;
+}
+.jumbotron-overlap .info-block .block h5 a:hover {
+    color: var(--color4)
+}
+.jumbotron-overlap .info-block .block img {
+    width: 100%;
 }
