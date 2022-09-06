@@ -663,4 +663,106 @@ section.news .info-block .block .link-news {
     font-size: 18px;
     line-height: 40px;
     border: 0;
+    position: relative;
+    cursor: pointer;
+}
+.btn_second:first-of-type:before,
+.btn_second:last-of-type:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    left: 50%;
+    opacity: .3;
+    transition: all .1s ease-in-out;
+}
+.btn_second:first-of-type:before {
+    transform: translate(-50%, -50%);
+}
+.btn_second:last-of-type:before {
+    transform: rotate(180deg) translate(50%, 50%);
+}
+.btn_second:first-of-type:hover:before,
+.btn_second:last-of-type:hover:before {
+    opacity: 1;
+}
+.second_slider_arrow {
+    display: flex;
+}
+.testimonials {
+    margin-bottom: 0;
+}
+.testimonials .info-block .block {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+.testimonials .h3-title .line {
+    margin-right: 30px;
+}
+.testimonials .info-block .block .people {
+    margin-left: 10px;
+}
+.testimonials .info-block .block .people div {
+    display: flex;
+    font-weight: bold;
+}
+.testimonials .info-block .block .people div span {
+    font-style: italic;
+    margin-left: 5px;
+    font-weight: normal;
+    color: var(--color2);
+}
+.testimonials .info-block .block .block-comment {
+    margin-bottom: 30px;
+    padding: 21px 15px 21px 0;
+    display: flex;
+    background-color: var(--white);
+    margin: 0 10px 30px 10px;
+    position: relative;
+}
+.testimonials .info-block .block .block-comment::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: #fff transparent transparent transparent;
+    bottom: -20px;
+    left: 30px;
+}
+.testimonials .info-block .block .block-comment .icon {
+    padding: 0 5px 5px 5px;
+    color: var(--white);
+    font-size: 50px;
+    font-weight: bold;
+    background-color: var(--color4);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    margin-right: 20px;
+}
+.testimonials .info-block .block .block-comment .comment {
+    color: var(--color2);
+}
+.partner .info-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(165px, auto));
+    gap: 15px;
+}
+.partner .info-block img {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-bottom: 2px solid #b9babc;
+    border-radius: 2px;
+    transition: all 100ms ease-out;
+    opacity: .6;
+}
+.partner .info-block img:hover {
+    box-shadow: 0 6px 9px rgb(0 0 0 / 10%);
+    border-bottom: 2px solid #4ab9cf;
+    opacity: 1;
 }
