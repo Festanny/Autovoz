@@ -1,6 +1,15 @@
 $(document).ready(function(){
   $('.first-slider').slick();
 
+  $('.second-slider').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    appendArrows: $('.second_slider_arrow'),
+    prevArrow: '<button type="button" class="btn_second"></button>',
+    nextArrow: '<button type="button" class="btn_second"></button>'
+  });    
+
   $( window ).resize(function() {
     mlSlider();
   });
@@ -17,4 +26,3 @@ $(document).ready(function(){
   mlSlider();
 
 });
-
