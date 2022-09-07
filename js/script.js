@@ -26,23 +26,3 @@ $(document).ready(function(){
   mlSlider();
 
 });
-
-  $num1 = document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML;
-  $num1 = Number($num1);
-    $(window).scroll(function () {
-      if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
-        console.log(1);
-        numPlus();
-      }
-    });
-  
-  function numPlus() {
-    setInterval(function() {
-      $s = 0;
-      while ($s > $num1) {
-        document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML = $s;
-        $s++;
-        console.log($s);
-      }
-    }, 10000);
-  }
