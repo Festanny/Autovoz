@@ -38,6 +38,7 @@ $('.accordion-form form #collapse1 .accordion-body .edit').click(function () {
   $('.accordion-form form #collapse1 .accordion-body .edit').addClass('hidden');
 });
 
+
   // $num1 = document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML;
   // $num1 = Number($num1);
   //   $(window).scroll(function () {
