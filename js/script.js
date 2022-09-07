@@ -88,8 +88,8 @@ document.querySelector(".accordion-form form").addEventListener( "click" , funct
   }
 });
 
-var s=0;
 // счетчик чисел
+var s=0;
 $(window).scroll(function () {
   if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
     // $('#fastRightStart').addClass('active');
@@ -100,7 +100,6 @@ $(window).scroll(function () {
     }
   }
 });
-
 function calcCount() {
   for (var i = 0; i < $('.counter .info-block .block .number-counter span').length; i++) {
       var end = $('.counter .info-block .block .number-counter span').eq(i).text();
@@ -108,7 +107,6 @@ function calcCount() {
   }
   s=1;
 }
-
 function countStart(end, i) {
   var start = 0;
   var interval = setInterval(function () {
@@ -116,28 +114,5 @@ function countStart(end, i) {
       if (start == end) {
           clearInterval(interval);
       }
-  }, 40);//скорость менять вот-тута
+  }, 40);
 }
-
-
-
-  // $num1 = document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML;
-  // $num1 = Number($num1);
-  //   $(window).scroll(function () {
-  //     if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
-  //       console.log(1);
-  //       numPlus();
-  //     }
-  //   });
-  
-  // function numPlus() {
-  //   setInterval(function() {
-  //     $s = 0;
-  //     while ($s > $num1) {
-  //       document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML = $s;
-  //       $s++;
-  //       console.log($s);
-  //     }
-  //   }, 10000);
-  // }
-
