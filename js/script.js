@@ -71,14 +71,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 });
 
-
-// получение даты
-// $('#datepicker').change(function () {
-//   let date = $('#datepicker').val();
-//   let value = $('input[name="auto"]:checked').val()
-// })
-
-
+// получение данных из формы
 document.querySelector(".accordion-form form").addEventListener( "click" , function() {
   let car = $('input[name="car"]:checked').val()
   let brand = $('input[name="brand"]').val()
@@ -94,6 +87,37 @@ document.querySelector(".accordion-form form").addEventListener( "click" , funct
     $('.accordion-form form .info-block .info-block-main .info span').html(`${car} ${brand} ${model} из ${city1} в ${city2}. Желаемая дата отправки: ${date}`);
   }
 });
+
+var s=0;
+// счетчик чисел
+$(window).scroll(function () {
+  if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
+    // $('#fastRightStart').addClass('active');
+    console.log(1);
+    
+    if (s==0) {
+      calcCount();
+    }
+  }
+});
+
+function calcCount() {
+  for (var i = 0; i < $('.counter .info-block .block .number-counter span').length; i++) {
+      var end = $('.counter .info-block .block .number-counter span').eq(i).text();
+      countStart(end, i);
+  }
+  s=1;
+}
+
+function countStart(end, i) {
+  var start = 0;
+  var interval = setInterval(function () {
+      $('.counter .info-block .block .number-counter span').eq(i).text(++start);
+      if (start == end) {
+          clearInterval(interval);
+      }
+  }, 40);//скорость менять вот-тута
+}
 
 
 
