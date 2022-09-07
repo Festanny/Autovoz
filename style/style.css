@@ -895,3 +895,9 @@ footer .footer_2::before {
     transform: rotate(135deg);
     background-color: var(--blue);
 }
+.accordion-form form #collapse1 .accordion-body {
+    display: flex;
+}
+.accordion-form form #collapse1 .accordion-body input {
+    display: none;
+}
