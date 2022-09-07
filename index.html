@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/bootstrap.css">
+
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
 </head>
 <body>
@@ -256,32 +257,32 @@
                               <label for="car1">
                                 <img src="img/typeauto/sedan.png" alt="">
                                 <span>Седан</span>
-                                <input type="radio" id="car1" name="car-type" value="Седан">
+                                <input type="radio" id="car1" name="car" value="Седан" required>
                             </label>
                               <label for="car2">
                                 <img src="img/typeauto/crossover.png" alt="">
                                 <span>Кроссовер</span>
-                                <input type="radio" id="car2" name="car-type" value="Кроссовер">
+                                <input type="radio" id="car2" name="car" value="Кроссовер" required>
                             </label>
                               <label for="car3">
                                 <img src="img/typeauto/universal.png" alt="">
                                 <span>Универсал</span>
-                                <input type="radio" id="car3" name="car-type" value="Универсал">
+                                <input type="radio" id="car3" name="car" value="Универсал" required>
                             </label>
                               <label for="car4">
                                 <img src="img/typeauto/suv.png" alt="">
                                 <span>Внедорожник</span>
-                                <input type="radio" id="car4" name="car-type" value="Внедорожник">
+                                <input type="radio" id="car4" name="car" value="Внедорожник" required>
                             </label>
                               <label for="car5">
                                 <img src="img/typeauto/load-truck.png" alt="">
                                 <span>Грузовой</span>
-                                <input type="radio" id="car5" name="car-type" value="Грузовой">
+                                <input type="radio" id="car5" name="car" value="Грузовой" required>
                             </label>
                               <label for="car6">
                                 <img src="img/typeauto/sportcar.png" alt="">
                                 <span>Другое</span>
-                                <input type="radio" id="car6" name="car-type" value="Другое">
+                                <input type="radio" id="car6" name="car" value="Другое" required>
                             </label>
                                 <span class="edit hidden">Изменить</span>
                             </div>
@@ -298,11 +299,11 @@
                               <p>Для более точного расчета перевозки укажите модель и марку вашего легкового транспорта. Вы можете пропустить этот шаг.</p>
                               <div class="form-group-auto">
                                 <div class="form-group-auto-row">
-                                    <input type="text" placeholder="Марка авто">
+                                    <input type="text" placeholder="Марка авто" name="brand">
                                     <span>Например, Nissan</span>
                                 </div>
                                 <div class="form-group-auto-row">
-                                    <input type="text" placeholder="Марка авто">
+                                    <input type="text" placeholder="Модель авто" name="model">
                                     <span>Например, Murano</span>
                                 </div>
                               </div>
@@ -319,15 +320,15 @@
                             <div class="accordion-body">
                                 <div class="form-group-auto">
                                     <div class="form-group-auto-row">
-                                        <input type="text" placeholder="Откуда">
+                                        <input type="text" placeholder="Откуда" name="city1" required>
                                         <span>Например, Москва</span>
                                     </div>
                                     <div class="form-group-auto-row">
-                                        <input type="text" placeholder="Куда">
+                                        <input type="text" placeholder="Куда" name="city2" required>
                                         <span>Например, Владивосток</span>
                                     </div>
                                     <div class="form-group-auto-row">
-                                        <input type="text" placeholder="Куда" id="datepicker" />
+                                        <input type="text" placeholder="Желаемая дата отправки" id="datepicker" name="date" required>
                                     </div>
                                 </div>
                             </div>
@@ -341,7 +342,30 @@
                           </h2>
                           <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionMain">
                             <div class="accordion-body">
-                              <strong>Это тело аккордеона третьего элемента.</strong> По умолчанию оно скрыто, пока плагин свертывания не добавит соответствующие классы, которые мы используем для стилизации каждого элемента. Эти классы управляют общим внешним видом, а также отображением и скрытием с помощью переходов CSS. Вы можете изменить все это с помощью собственного CSS или переопределить наши переменные по умолчанию. Также стоит отметить, что практически любой HTML может быть помещен в <code>.accordion-body</code>, хотя переход ограничивает переполнение.
+                                <p class="manager">Наши менеджеры рассчитывают стоимость перевозки автомобиля по Вашей заявке!</p>
+                                <div class="info-block">
+                                    <div class="info-block-main">
+                                        <span><b>Вы хотите перевезти:</b></span>
+                                        <div class="info">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <span class="price-text"><b>Узнайте стоимость прямо сейчас!</b></span>
+                                </div>
+                                <div class="form-group-auto">
+                                  <div class="form-group-auto-row">
+                                      <input type="text" placeholder="Имя" name="name" required>
+                                  </div>
+                                  <div class="form-group-auto-row">
+                                      <input type="text" placeholder="Номер телефона" name="phone" id="phone" required>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" class="form-check-input" id="agree-on-pdata-processing-check" required="" checked="">
+                                    <label class="form-check-label" for="agree-on-pdata-processing-check">Согласен на обработку персональных данных</label>
+                                    <button type="submit" class="btn d-flex align-items-center btn_services" id="btn_services">Узнать стоимость</button>
+                                    <p class="desc">* В течение 5 минут с Вами свяжется наш специалист и проинформирует вас о стоимости перевозки, а также ответит на все интересующие Вас вопросы.</p>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -505,9 +529,7 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <script src="js/script.js"></script>
-<script src="jquery-ui/jquery-ui.min.js"></script>
-<script>
-    $('#datepicker').datepicker();
-</script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="js/jquery-ui.js"></script>
 </body>
 </html>

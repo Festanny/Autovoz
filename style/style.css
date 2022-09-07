@@ -931,6 +931,7 @@ footer .footer_2::before {
 }
 .accordion-button:not(.collapsed) {
     background-color: var(--color5);
+    color: var(--color4);
 }
 .accordion-form form #collapse1 .accordion-body .edit {
     display: flex;
@@ -944,20 +945,27 @@ footer .footer_2::before {
     display: flex;
     flex-direction: column;
 }
-.accordion-form form #collapse2 .accordion-body .form-group-auto {
+.accordion-form form #collapse2 .accordion-body .form-group-auto,
+.accordion-form form #collapse4 .accordion-body .form-group-auto {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-top: 16px;
 }
 .accordion-form form #collapse2 .accordion-body .form-group-auto input,
-.accordion-form form #collapse3 .accordion-body .form-group-auto input {
+.accordion-form form #collapse3 .accordion-body .form-group-auto input,
+.accordion-form form #collapse4 .accordion-body .form-group-auto input {
     width: 100%;
     margin-bottom: 4px;
     outline: 0;
     border: 1px solid var(--gray01);
     padding: 8px 12px;
     border-radius: 2px;
+}
+.accordion-form form #collapse2 .accordion-body .form-group-auto input:focus,
+.accordion-form form #collapse3 .accordion-body .form-group-auto input:focus,
+.accordion-form form #collapse4 .accordion-body .form-group-auto input:focus {
+    border-color: var(--color4);
 }
 .accordion-form form #collapse2 .accordion-body .form-group-auto span,
 .accordion-form form #collapse3 .accordion-body .form-group-auto span {
@@ -968,4 +976,50 @@ footer .footer_2::before {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+.ui-datepicker .ui-datepicker-title {
+    display: flex;
+    justify-content: center;
+}
+.accordion-form form #collapse4 .accordion-body .manager {
+    color: var(--color4);
+    font-weight: bold;
+}
+.accordion-form form #collapse4 .accordion-body .info-block .info-block-main {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    margin-top: 16px;
+    padding: 10px;
+    border: 1px solid var(--color4);
+    border-radius: 2px;
+}
+.accordion-form form #collapse4 .accordion-body .info-block .info-block-main .info {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.accordion-form form #collapse4 .accordion-body .info-block .info-block-main span,
+.accordion-form form #collapse4 b {
+    font-size: 15px;
+}
+.accordion-form .btn_services {
+    background-color: var(--color4);
+    color: var(--white)
+}
+.accordion-form .btn_services:hover {
+    color: var(--white);
+}
+.accordion-form form #collapse4 .accordion-body .form-group .desc {
+    font-size: 15px;
+    margin-top: 16px;
+}
+.accordion-form form #collapse4 .accordion-body .info-block .price-text {
+    margin-top: 16px;
+}
+.accordion-form form #collapse4 .accordion-body .form-group {
+    margin-top: 8px;
+}
+.accordion-form form #collapse4 .accordion-body .form-group button {
+    margin-top: 16px;
 }
