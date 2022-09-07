@@ -27,22 +27,34 @@ $(document).ready(function(){
 
 });
 
-  $num1 = document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML;
-  $num1 = Number($num1);
-    $(window).scroll(function () {
-      if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
-        console.log(1);
-        numPlus();
-      }
-    });
+$('.accordion-form form #collapse1 .accordion-body label').click(function () {
+  $('.accordion-form form #collapse1 .accordion-body label').addClass('hidden');
+  $(this).addClass('active');
+  $('.accordion-form form #collapse1 .accordion-body .edit').removeClass('hidden');
+});
+
+$('.accordion-form form #collapse1 .accordion-body .edit').click(function () {
+  $('.accordion-form form #collapse1 .accordion-body label').removeClass('hidden active');
+  $('.accordion-form form #collapse1 .accordion-body .edit').addClass('hidden');
+});
+
+  // $num1 = document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML;
+  // $num1 = Number($num1);
+  //   $(window).scroll(function () {
+  //     if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
+  //       console.log(1);
+  //       numPlus();
+  //     }
+  //   });
   
-  function numPlus() {
-    setInterval(function() {
-      $s = 0;
-      while ($s > $num1) {
-        document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML = $s;
-        $s++;
-        console.log($s);
-      }
-    }, 10000);
-  }
+  // function numPlus() {
+  //   setInterval(function() {
+  //     $s = 0;
+  //     while ($s > $num1) {
+  //       document.querySelectorAll('.counter .info-block .block .number-counter span')[0].innerHTML = $s;
+  //       $s++;
+  //       console.log($s);
+  //     }
+  //   }, 10000);
+  // }
+
