@@ -1065,6 +1065,7 @@ footer .footer_2::before {
 }
 #magnify img {
   width: 100%;
+  border-radius: 10px;
 }
 #overlay {
   display: none;
