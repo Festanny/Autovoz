@@ -10,6 +10,7 @@
   --color6: #eeeeee;
   --color7: #9eb7cb;
   --color8: #162e41;
+  --color9: #dbdbdb;
   --red: #e21f2f;
   --blue: #1f425d;
   --white: #ffffff;
@@ -22,7 +23,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -102,6 +102,7 @@ h6 {
   color: #444;
   font-weight: 900;
   letter-spacing: -0.05em;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 header {
   padding-top: 23px;
@@ -924,7 +925,7 @@ footer .footer_2::before {
   display: none;
 }
 .accordion-form form #collapse1 .accordion-body label img {
-  height: 60px;
+  height: 40px;
   object-fit: contain;
 }
 .accordion-form form #collapse1 .accordion-body label {
@@ -967,7 +968,9 @@ footer .footer_2::before {
 }
 .accordion-form form #collapse2 .accordion-body .form-group-auto input,
 .accordion-form form #collapse3 .accordion-body .form-group-auto input,
-.accordion-form form #collapse4 .accordion-body .form-group-auto input {
+.accordion-form form #collapse4 .accordion-body .form-group-auto input,
+.address-time-form .info-block .block.form-block form input,
+.address-time-form .info-block .block.form-block form .form-block textarea {
   width: 100%;
   margin-bottom: 4px;
   outline: 0;
@@ -977,7 +980,9 @@ footer .footer_2::before {
 }
 .accordion-form form #collapse2 .accordion-body .form-group-auto input:focus,
 .accordion-form form #collapse3 .accordion-body .form-group-auto input:focus,
-.accordion-form form #collapse4 .accordion-body .form-group-auto input:focus {
+.accordion-form form #collapse4 .accordion-body .form-group-auto input:focus,
+.address-time-form .info-block .block.form-block form input:focus,
+.address-time-form .info-block .block.form-block form .form-block textarea:focus {
   border-color: var(--color4);
 }
 .accordion-form form #collapse2 .accordion-body .form-group-auto span,
@@ -987,7 +992,7 @@ footer .footer_2::before {
 }
 .accordion-form form #collapse3 .accordion-body .form-group-auto {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
   gap: 20px;
 }
 .ui-datepicker .ui-datepicker-title {
@@ -1048,8 +1053,6 @@ footer .footer_2::before {
 .accordion-form form #collapse4 .accordion-body .form-group button {
   margin-top: 16px;
 }
-
-/*  */
 .minimized {
   cursor: pointer;
 }
@@ -1093,4 +1096,146 @@ footer .footer_2::before {
   background-size: 20px 20px;
   display: block;
   filter: invert(1);
+}
+
+/*  */
+section.title-page,
+section.breadcrumbs {
+    margin-bottom: 0;
+}
+.title-page {
+    padding: 50px 0;
+    background: #f5f5f5 linear-gradient(90deg, #f5f5f5, #eeeeee);
+}
+.title-page h1 {
+    font-size: 44px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.title-page h3 {
+    font-size: 16px;
+    color: var(--color2);
+    font-weight: normal;
+}
+.breadcrumbs .info-block {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+.breadcrumbs .info-block a {
+    font-weight: bold;
+    color: var(--color3);
+    position: relative;
+    padding: 12px 30px 12px 0;
+    margin-right: 30px;
+}
+.breadcrumbs .info-block a::before,
+.breadcrumbs .info-block a::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color9);
+    height: 1px;
+}
+.breadcrumbs .info-block a::before {
+    width: 33px;
+    transform: rotate(45deg);
+    right: -15px;
+    top: 10px;
+}
+.breadcrumbs .info-block a::after {
+    width: 33px;
+    transform: rotate(-45deg);
+    right: -15px;
+    bottom: 11px;
+}
+.breadcrumbs .info-block span {
+    color: var(--color2);
+    padding: 12px 0;
+}
+.address-time-form .info-block {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 30px;
+}
+.address-time-form .block .address,
+.address-time-form .block .time {
+    padding: 30px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+    background-color: var(--white);
+}
+.address-time-form .block .address {
+    margin-bottom: 30px;
+}
+.address-time-form .info-block .block .address span,
+.address-time-form .info-block .block .time h3,
+.address-time-form .info-block .block.form-block h3 {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.address-time-form .info-block .block .address p {
+    font-size: 14px;
+    color: var(--color2);
+    margin-bottom: 11px;
+}
+.address-time-form .info-block .block .address a {
+    color: #4ab9cf;
+}
+.address-time-form .info-block .block .time .info-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color2);
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+.address-time-form .info-block .block .time .info-time .time-main {
+    text-transform: uppercase;
+}
+.address-time-form .info-block .block .time .info-time .line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--color3);
+    margin: 0 10px;
+    opacity: 0.1;
+}
+.address-time-form .info-block .block.form-block p {
+    font-size: 14px;
+    color: var(--color2);
+    margin-bottom: 11px;
+}
+.address-time-form .info-block .block.form-block .btn_contact {
+    background-color: var(--color4);
+    color: var(--white);
+}
+.address-time-form .info-block .block.form-block .btn_contact:hover {
+    color: var(--white);
+}
+.address-time-form .info-block .block.form-block form input,
+.address-time-form .info-block .block.form-block form textarea {
+    padding: 18px 20px;
+    font-size: 16px;
+}
+.address-time-form .info-block .block.form-block form .form-block div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.address-time-form .info-block .block.form-block form .form-block div input {
+    width: calc(50% - 15px);
+    margin-bottom: 30px;
+}
+.address-time-form .info-block .block.form-block form .form-block div input:last-of-type {
+    width: 100%;
+}
+.address-time-form .info-block .block.form-block form .form-block {
+    margin-bottom: 15px;
+}
+.aboutUs .about-accordion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }

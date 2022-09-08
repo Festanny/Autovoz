@@ -1,3 +1,26 @@
+// Получение сегодняшнего дня
+function dateContact() {
+  var d = new Date();
+  var n = d.getDay();
+  var time = $('.address-time-form .info-block .block .time .info-time');
+  if (n==1) {
+    time.eq(0).css({'font-weight':'900', 'color': '#444444'});
+  } else if (n==2) {
+    time.eq(1).css({'font-weight':'900', 'color': '#444444'});
+  } else if (n==3) {
+    time.eq(2).css({'font-weight':'900', 'color': '#444444'});
+  } else if (n==4) {
+    time.eq(3).css({'font-weight':'900', 'color': '#444444'});
+  } else if (n==5) {
+    time.eq(4).css({'font-weight':'900', 'color': '#444444'});
+  } else if (n==6) {
+    time.eq(5).css({'font-weight':'900', 'color': '#444444'});
+  } else {
+    time.eq(6).css({'font-weight':'900', 'color': '#444444'});
+  } 
+}
+dateContact();
+
 // первый слайдер
 $('.first-slider').slick();
 
@@ -94,7 +117,6 @@ $(window).scroll(function () {
   if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
     // $('#fastRightStart').addClass('active');
     console.log(1);
-    
     if (s==0) {
       calcCount();
     }
@@ -114,7 +136,7 @@ function countStart(end, i) {
       if (start == end) {
           clearInterval(interval);
       }
-  }, 40);
+  }, 30);
 }
 
 // Просмотр изображения
@@ -132,3 +154,4 @@ $(function(){
     });
   });
 });
+
