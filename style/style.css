@@ -919,14 +919,17 @@ footer .footer_2::before {
 .accordion-form form #collapse1 .accordion-body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, auto));
-  gap: 20px;
+  gap: 10px;
 }
 .accordion-form form #collapse1 .accordion-body input {
   display: none;
 }
 .accordion-form form #collapse1 .accordion-body label img {
-  height: 40px;
+  height: 35px;
   object-fit: contain;
+}
+.accordion-form form #collapse1 .accordion-body label span {
+    font-size: 14px;
 }
 .accordion-form form #collapse1 .accordion-body label {
   text-align: center;
@@ -953,7 +956,7 @@ footer .footer_2::before {
   cursor: pointer;
 }
 .hidden {
-  display: none !important;
+  display: none!important;
 }
 .accordion-form form #collapse2 .accordion-body {
   display: flex;
@@ -1243,6 +1246,9 @@ section.breadcrumbs {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
+.accordion-form form .accordion .accordion-item.notHidden {
+    display: none;
+}
 .text-page-block {
     margin-top: 60px;
 }
@@ -1264,4 +1270,24 @@ section.breadcrumbs {
 }
 .text-page-block .text-block .block h3 {
     margin-bottom: 15px;
+}
+.accordion .next-btn {
+    margin-top: 16px;
+    display: flex;
+}
+.accordion #collapse2 .next-btn .btn-suc {
+    background-color: var(--color4);
+    margin-right: 8px;
+}
+.accordion #collapse2 .next-btn .btn-next {
+    background-color: var(--blue);
+}
+.error {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--white);
+    padding: 5px 10px;
+    background-color: var(--red);
+    border-radius: 5px;
+    display: inline-block;
 }

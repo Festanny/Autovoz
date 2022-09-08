@@ -40,10 +40,10 @@ $( window ).resize(function() {
 });
 function mlSlider() {
   if ($(window).width() > 1200) {
-    $cnt = 1170;
+    var cnt = 1170;
   }
-  $cntMl = ($(window).width() - $cnt) / 2 + 15;
-  $('.slick-arrow').css('margin-left', $cntMl);
+  var cntMl = ($(window).width() - cnt) / 2 + 15;
+  $('.slick-arrow').css('margin-left', cntMl);
 }
 mlSlider();
 
@@ -95,6 +95,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 // получение данных из формы
+let t1 = 0;
 document.querySelector(".accordion-form form").addEventListener( "click" , function() {
   let car = $('input[name="car"]:checked').val()
   let brand = $('input[name="brand"]').val()
@@ -102,12 +103,54 @@ document.querySelector(".accordion-form form").addEventListener( "click" , funct
   let city1 = $('input[name="city1"]').val()
   let city2 = $('input[name="city2"]').val()
   let date = $('input[name="date"]').val()
-
   if (car === undefined) {
     car = '';
   }
   if (car!='' && city1!='' && city2!='' && date!='') {
     $('.accordion-form form .info-block .info-block-main .info span').html(`${car} ${brand} ${model} из ${city1} в ${city2}. Желаемая дата отправки: ${date}`);
+  }
+  if (t1==0) {
+    if ($('.accordion-form form #collapse1 .accordion-body label input').is(':checked')) {
+      $('.accordion-form form .accordion .accordion-item:nth-child(2)').removeClass('notHidden');
+      const collapseElem = document.querySelector('#collapse2');
+      const collapse = new bootstrap.Collapse(collapseElem, {toggle: false});
+      collapse.toggle();
+      t1=1;
+    }
+  }
+  $('.accordion #collapse2 .next-btn .btn-suc').click(function() {
+    let brand2 = $('input[name="brand"]').val();
+    let model = $('input[name="model"]').val();
+    if (brand2!='' || model!='') {
+      collapse3();
+    }
+  });
+  $('.accordion #collapse2 .next-btn .btn-next').click(function() {
+      $('input[name="brand"]').prop('required', false);
+      $('input[name="model"]').prop('required', false);
+    collapse3();
+  });
+  $('.accordion #collapse3 .next-btn .btn-suc').click(function() {
+    let city1_2 = $('input[name="city1"]').val();
+    let city2_2 = $('input[name="city2"]').val();
+    let date_2 = $('input[name="date"]').val();
+    if (city1_2!='' || city2_2!='' || date_2!='') {
+      collapse4();
+    }
+  });
+  function collapse3() {
+    $('.accordion-form form .accordion .accordion-item:nth-child(3)').removeClass('notHidden');
+    const collapseElem2 = document.querySelector('#collapse3');
+    const collapse2 = new bootstrap.Collapse(collapseElem2, {toggle: false});
+    collapse2.toggle();
+    $('.accordion #collapse2 .next-btn').remove();
+  }
+  function collapse4() {
+    $('.accordion-form form .accordion .accordion-item:nth-child(4)').removeClass('notHidden');
+    const collapseElem3 = document.querySelector('#collapse4');
+    const collapse3 = new bootstrap.Collapse(collapseElem3, {toggle: false});
+    collapse3.toggle();
+    $('.accordion #collapse3 .next-btn').remove();
   }
 });
 
