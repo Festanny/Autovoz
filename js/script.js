@@ -22,7 +22,11 @@ function dateContact() {
 dateContact();
 
 // первый слайдер
-$('.first-slider').slick();
+$('.first-slider-main').slick({
+  appendArrows: $('.first-slider-main'),
+  prevArrow: '<button type="button" class="btn_second_slider btn_sec_prev"></button>',
+  nextArrow: '<button type="button" class="btn_second_slider btn_sec_next"></button>'
+});
 
 // второй слайдер
 $('.second-slider').slick({
@@ -38,11 +42,10 @@ $('.second-slider').slick({
 $( window ).resize(function() {
   mlSlider();
   headerBefore();
+  
 });
 function mlSlider() {
-  if ($(window).width() > 1200) {
-    var cnt = 1170;
-  }
+  var cnt = $('.container').width() + 30;
   var cntMl = ($(window).width() - cnt) / 2 + 15;
   $('.slick-arrow').css('margin-left', cntMl);
 }
@@ -75,7 +78,6 @@ headerBefore();
 // слежение за объектом
 let observer = new MutationObserver(mutationRecords => {
   headerBefore();
-  console.log(222);
 });
 var config = { childList: true, subtree: true, characterDataOldValue: true };
 observer.observe(elemW_1, config);

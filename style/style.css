@@ -1,6 +1,3 @@
-@import url('fonts.css');
-@import url('');
-
 :root {
   --bg: #ffffff;
   --color: #545454;
@@ -50,22 +47,6 @@ span {
 }
 input {
   font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
 }
 .container {
   padding-right: 15px;
@@ -1395,4 +1376,59 @@ p {
 }
 .info-text-dr .accordion #collapseDr2 ol li {
   list-style: disc;
+}
+.btn_second_slider {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 30px;
+  display: flex!important;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background-color: rgba(250,250,250,.35);
+  margin-top: -2px;
+  transition: background .3s ease-in-out;
+  z-index: 50;
+}
+.btn_second_slider::before {
+    transition: all .3s;
+    opacity: 0.3;
+    transition: all 0.1s ease-in-out;
+}
+.btn_second_slider:hover:before,
+.btn_second_slider:hover:before {
+  opacity: 1;
+}
+.btn_sec_prev:before {
+  content: '';
+  background-image: url(../img/arrow.svg);
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+  width: 50px;
+  height: 30px;
+  right: 50%;
+  transform: rotate(180deg) translateX(-50%);
+}
+.btn_sec_next:before {
+  content: '';
+  background-image: url(../img/arrow.svg);
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+  width: 50px;
+  height: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn_sec_next {
+  transform: translateX(70px);
 }
