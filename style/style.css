@@ -35,7 +35,7 @@ body {
 a {
   text-decoration: none;
   display: block;
-  color: var(--white);
+  color: var(--color);
 }
 ul {
   margin: 0;
@@ -1339,6 +1339,9 @@ section.breadcrumbs.contact-page {
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
+.directions .map-price .map-dr {
+  overflow: hidden;
+}
 .info-text-dr .accordion table thead tr th:nth-child(1) {
   text-align: left;
 }
@@ -1350,4 +1353,46 @@ section.breadcrumbs.contact-page {
 }
 .info-text-dr .accordion table tbody tr td:nth-child(2) {
   text-align: center;
+}
+table {
+  border-collapse: collapse;
+}
+.table > :not(:first-child) {
+  border-top: 3px solid var(--gray01)!important;
+}
+table tbody tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--gray01);
+}
+.info-text-dr .accordion #collapseDr2 {
+  font-size: 15px;
+}
+.info-text-dr .accordion #collapseDr2 .drText1 {
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+p {
+  display: flex;
+  flex-wrap: wrap;
+}
+.info-text-dr .accordion #collapseDr2 p {
+  margin-bottom: 11px;
+}
+.info-text-dr .accordion #collapseDr2 p a {
+  margin-left: 5px;
+  color: var(--color4);
+}
+.info-text-dr .accordion #collapseDr2 h2 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.info-text-dr .accordion #collapseDr2 ul,
+.info-text-dr .accordion #collapseDr2 ol {
+  margin-left: 30px;
+}
+.info-text-dr .accordion #collapseDr2 ul li {
+  list-style: decimal;
+}
+.info-text-dr .accordion #collapseDr2 ol li {
+  list-style: disc;
 }
