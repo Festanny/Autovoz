@@ -37,6 +37,7 @@ $('.second-slider').slick({
 // отступ слева у навигации слайдера
 $( window ).resize(function() {
   mlSlider();
+  headerBefore();
 });
 function mlSlider() {
   if ($(window).width() > 1200) {
@@ -45,7 +46,44 @@ function mlSlider() {
   var cntMl = ($(window).width() - cnt) / 2 + 15;
   $('.slick-arrow').css('margin-left', cntMl);
 }
+
+// движение :before в зависимости от ширины li в header
+function headerBefore() {
+  $('.header__container .nav_main .nav_main_ul_li').each(function(){
+    var sumLi = $(this).find('li').length
+    $('.header__container .nav_main .nav_main_ul_li li ul').each(function(){
+        var sumOther = $(this).find('li').length;
+        sumLi -= sumOther;
+        var sumWidth = 0;
+        for (var i=0; i<sumLi; i++) {
+          var sumLiBlock = $(".header__container .nav_soc .nav_main > ul li").not(".header__container .nav_soc .nav_main ul li ul li").eq(i).width()
+          sumWidth += sumLiBlock;
+          // console.log(sumWidth);
+          if (sumWidth > 606) {
+            console.log(sumWidth);
+            $('.header__container .whiteLine').removeClass('down');
+          } else {
+            $('.header__container .whiteLine').addClass('down');
+          }
+        }
+    });
+});
+}
 mlSlider();
+headerBefore();
+
+// слежение за объектом
+let observer = new MutationObserver(mutationRecords => {
+  headerBefore();
+  console.log(222);
+});
+var config = { childList: true, subtree: true, characterDataOldValue: true };
+observer.observe(elemW_1, config);
+observer.observe(elemW_2, config);
+observer.observe(elemW_3, config);
+observer.observe(elemW_4, config);
+observer.observe(elemW_5, config);
+observer.observe(elemW_6, config);
 
 // аккордион (форма)
 $('.accordion-form form #collapse1 .accordion-body label').click(function () {
@@ -155,31 +193,33 @@ document.querySelector(".accordion-form form").addEventListener( "click" , funct
 });
 
 // счетчик чисел
-var s=0;
-$(window).scroll(function () {
-  if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
-    // $('#fastRightStart').addClass('active');
-    console.log(1);
-    if (s==0) {
-      calcCount();
-    }
-  }
-});
-function calcCount() {
-  for (var i = 0; i < $('.counter .info-block .block .number-counter span').length; i++) {
-      var end = $('.counter .info-block .block .number-counter span').eq(i).text();
-      countStart(end, i);
-  }
-  s=1;
-}
-function countStart(end, i) {
-  var start = 0;
-  var interval = setInterval(function () {
-      $('.counter .info-block .block .number-counter span').eq(i).text(++start);
-      if (start == end) {
-          clearInterval(interval);
+if ($(".counter .info-block").length > 0) {
+  var s=0;
+  $(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() >= $('.counter .info-block').offset().top) {
+      // $('#fastRightStart').addClass('active');
+      // console.log(1);
+      if (s==0) {
+        calcCount();
       }
-  }, 30);
+    }
+  });
+  function calcCount() {
+    for (var i = 0; i < $('.counter .info-block .block .number-counter span').length; i++) {
+        var end = $('.counter .info-block .block .number-counter span').eq(i).text();
+        countStart(end, i);
+    }
+    s=1;
+  }
+  function countStart(end, i) {
+    var start = 0;
+    var interval = setInterval(function () {
+        $('.counter .info-block .block .number-counter span').eq(i).text(++start);
+        if (start == end) {
+            clearInterval(interval);
+        }
+    }, 30);
+  }
 }
 
 // Просмотр изображения

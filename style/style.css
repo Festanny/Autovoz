@@ -1,4 +1,5 @@
-@import url("fonts.css");
+@import url('fonts.css');
+@import url('');
 
 :root {
   --bg: #ffffff;
@@ -148,14 +149,18 @@ header .logo__nav img {
   width: 100%;
   object-fit: contain;
 }
-.header__container::before {
-  content: "";
+.header__container .whiteLine {
   position: absolute;
   left: 0;
-  bottom: 30px;
   height: 30px;
   background-color: var(--white);
   width: calc(50% - 585px);
+  bottom: 50%;
+  transform: translateY(calc(50% + 1px));
+}
+.header__container .whiteLine.down {
+  bottom: 30px;
+  transform: none;
 }
 .header__container nav {
   background-color: var(--blue);
@@ -191,6 +196,7 @@ header .logo__nav img {
 }
 .header__container .nav_main ul {
   display: flex;
+  flex-wrap: wrap;
 }
 .header__container .nav_main ul li a {
   color: var(--white);
@@ -969,11 +975,13 @@ footer .footer_2::before {
   gap: 20px;
   margin-top: 16px;
 }
-.accordion-form form #collapse2 .accordion-body .form-group-auto input,
+/* .accordion-form form #collapse2 .accordion-body .form-group-auto input,
 .accordion-form form #collapse3 .accordion-body .form-group-auto input,
 .accordion-form form #collapse4 .accordion-body .form-group-auto input,
 .address-time-form .info-block .block.form-block form input,
-.address-time-form .info-block .block.form-block form .form-block textarea {
+.address-time-form .info-block .block.form-block form .form-block textarea { */
+input,
+textarea {
   width: 100%;
   margin-bottom: 4px;
   outline: 0;
@@ -981,11 +989,13 @@ footer .footer_2::before {
   padding: 8px 12px;
   border-radius: 2px;
 }
-.accordion-form form #collapse2 .accordion-body .form-group-auto input:focus,
+/* .accordion-form form #collapse2 .accordion-body .form-group-auto input:focus,
 .accordion-form form #collapse3 .accordion-body .form-group-auto input:focus,
 .accordion-form form #collapse4 .accordion-body .form-group-auto input:focus,
 .address-time-form .info-block .block.form-block form input:focus,
-.address-time-form .info-block .block.form-block form .form-block textarea:focus {
+.address-time-form .info-block .block.form-block form .form-block textarea:focus { */
+input:focus,
+textarea:focus {
   border-color: var(--color4);
 }
 .accordion-form form #collapse2 .accordion-body .form-group-auto span,
@@ -1103,7 +1113,7 @@ footer .footer_2::before {
 
 /*  */
 section.title-page,
-section.breadcrumbs {
+section.breadcrumbs.contact-page {
     margin-bottom: 0;
 }
 .title-page {
@@ -1249,9 +1259,6 @@ section.breadcrumbs {
 .accordion-form form .accordion .accordion-item.notHidden {
     display: none;
 }
-.text-page-block {
-    margin-top: 60px;
-}
 .text-page-block .text-block .block {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40%, auto));
@@ -1290,4 +1297,57 @@ section.breadcrumbs {
     background-color: var(--red);
     border-radius: 5px;
     display: inline-block;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn.blue {
+  background-color: var(--color4);
+  color: var(--white);
+}
+.btn.blue:hover {
+  background-color: var(--color4);
+  color: var(--white);
+}
+.directions {
+  margin-bottom: 30px;
+}
+.directions form.directions-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.directions form.directions-form input {
+  margin: 0;
+  padding-left: 40px;
+}
+.directions form.directions-form label {
+  position: relative;
+}
+.directions form.directions-form label i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 20px;
+  transform: translateY(-50%);
+}
+.directions .map-price {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.info-text-dr .accordion table thead tr th:nth-child(1) {
+  text-align: left;
+}
+.info-text-dr .accordion table tbody tr td:nth-child(1) {
+  text-align: left;
+}
+.info-text-dr .accordion table tbody tr td:nth-child(1) a {
+  color: var(--color);
+}
+.info-text-dr .accordion table tbody tr td:nth-child(2) {
+  text-align: center;
 }
