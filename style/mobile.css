@@ -162,6 +162,12 @@
     .accordion-form form #collapse1 .accordion-body {
         grid-template-columns: repeat(auto-fill, minmax(170px, auto));
     }
+    .directions .map-price {
+        grid-template-columns: 1fr;
+    }
+    .info-text-dr .accordion #collapseDr2 h2 {
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -351,6 +357,21 @@
     .address-time-form .info-block .block.form-block form textarea {
         height: 150px;
     }
+    .directions form.directions-form {
+        gap: 10px;
+    }
+    .accordion-button {
+        font-size: 16px!important;
+    }
+    .info-text-dr .accordion #collapseDr2 {
+        font-size: 14px;
+    }
+    .info-text-dr .accordion #collapseDr2 h2 {
+        font-size: 20px;
+    }
+    .info-text-dr .accordion #collapseDr1 .accordion-body {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -409,6 +430,9 @@
     }
     .title-page h1 {
         font-size: 25px;
+    }
+    .info-text-dr .accordion #collapseDr2 {
+        font-size: 14px;
     }
 }
 
