@@ -50,7 +50,6 @@ $('.second-slider').slick({
 $( window ).resize(function() {
   mlSlider();
   headerBefore();
-  
 });
 function mlSlider() {
   var cnt = $('.container').width() + 30;
@@ -96,16 +95,18 @@ observer.observe(elemW_5, config);
 observer.observe(elemW_6, config);
 
 // аккордион (форма)
-$('.accordion-form form #collapse1 .accordion-body label').click(function () {
-  $('.accordion-form form #collapse1 .accordion-body label').addClass('hidden');
-  $(this).addClass('active');
-  $('.accordion-form form #collapse1 .accordion-body .edit').removeClass('hidden');
-});
+if ($(".accordion-form form").length > 0) {
+  $('.accordion-form form #collapse1 .accordion-body label').click(function () {
+    $('.accordion-form form #collapse1 .accordion-body label').addClass('hidden');
+    $(this).addClass('active');
+    $('.accordion-form form #collapse1 .accordion-body .edit').removeClass('hidden');
+  });
 
-$('.accordion-form form #collapse1 .accordion-body .edit').click(function () {
-  $('.accordion-form form #collapse1 .accordion-body label').removeClass('hidden active');
-  $('.accordion-form form #collapse1 .accordion-body .edit').addClass('hidden');
-});
+  $('.accordion-form form #collapse1 .accordion-body .edit').click(function () {
+    $('.accordion-form form #collapse1 .accordion-body label').removeClass('hidden active');
+    $('.accordion-form form #collapse1 .accordion-body .edit').addClass('hidden');
+  });
+}
 
 // маска для телефона
 window.addEventListener("DOMContentLoaded", function() {
@@ -143,6 +144,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 // получение данных из формы
+if ($(".accordion-form form").length > 0) {
 let t1 = 0;
 document.querySelector(".accordion-form form").addEventListener( "click" , function() {
   let car = $('input[name="car"]:checked').val()
@@ -201,6 +203,7 @@ document.querySelector(".accordion-form form").addEventListener( "click" , funct
     $('.accordion #collapse3 .next-btn').remove();
   }
 });
+}
 
 // счетчик чисел
 if ($(".counter .info-block").length > 0) {

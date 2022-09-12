@@ -112,6 +112,7 @@ header .logo__nav {
 }
 header .nav .contact {
   display: flex;
+  flex-wrap: wrap;
 }
 header .nav .contact .icon-box {
   margin-right: 30px;
@@ -120,6 +121,8 @@ header .nav .contact .icon-box {
 }
 header .nav .contact .icon-box:last-of-type {
   border: 0;
+  padding-right: 0;
+  margin-right: 0;
 }
 header .logo__nav .logo {
   width: 170px;
@@ -1068,7 +1071,7 @@ textarea:focus {
 #magnify {
   display: none;
   position: fixed;
-  max-width: 600px;
+  width: 65%;
   height: auto;
   z-index: 9999;
   top: 50%;
