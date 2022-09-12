@@ -431,7 +431,8 @@
     .title-page h1 {
         font-size: 25px;
     }
-    .info-text-dr .accordion #collapseDr2 {
+    .info-text-dr .accordion #collapseDr2,
+    .address-time-form .block .time {
         font-size: 14px;
     }
 }
