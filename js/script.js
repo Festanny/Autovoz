@@ -159,15 +159,9 @@ document.querySelector(".accordion-form form").addEventListener( "click" , funct
   if (car!='' && city1!='' && city2!='' && date!='') {
     $('.accordion-form form .info-block .info-block-main .info span').html(`${car} ${brand} ${model} из ${city1} в ${city2}. Желаемая дата отправки: ${date}`);
   }
-  if (t1==0) {
-    if ($('.accordion-form form #collapse1 .accordion-body label input').is(':checked')) {
-      $('.accordion-form form .accordion .accordion-item:nth-child(2)').removeClass('notHidden');
-      const collapseElem = document.querySelector('#collapse2');
-      const collapse = new bootstrap.Collapse(collapseElem, {toggle: false});
-      collapse.toggle();
-      t1=1;
-    }
-  }
+  $('.accordion-form form #collapse1 .accordion-body input').click(() => {
+    collapse2();
+  })
   $('.accordion #collapse2 .next-btn .btn-suc').click(function() {
     let brand2 = $('input[name="brand"]').val();
     let model = $('input[name="model"]').val();
@@ -188,6 +182,12 @@ document.querySelector(".accordion-form form").addEventListener( "click" , funct
       collapse4();
     }
   });
+  function collapse2() {
+    $('.accordion-form form .accordion .accordion-item:nth-child(2)').removeClass('notHidden');
+    const collapseElem = document.querySelector('#collapse2');
+    const collapse = new bootstrap.Collapse(collapseElem, {toggle: false});
+    collapse.toggle();
+  }
   function collapse3() {
     $('.accordion-form form .accordion .accordion-item:nth-child(3)').removeClass('notHidden');
     const collapseElem2 = document.querySelector('#collapse3');
