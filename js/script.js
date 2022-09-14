@@ -143,7 +143,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 });
 
-// получение данных из формы
+// получение данных из формы (открытие формы)
 if ($(".accordion-form form").length > 0) {
 let t1 = 0;
 document.querySelector(".accordion-form form").addEventListener( "click" , function() {
